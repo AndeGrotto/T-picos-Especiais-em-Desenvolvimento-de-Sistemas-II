@@ -13,7 +13,7 @@ function abastecimento($gas, $alc)
     if ($gas < $alc) {
         echo '<td><h1>Abasteça com gasolina! </h1> <h2>Valor da diferença: R$' . $alc -$gas  .'</h2></td>';
     } else if ($gas > $alc) {
-        echo '<td><h1>Abasteça com álcool! </h1> <h2>Valor da diferença: R$' . $alc -$gas  .'</h2></td>';
+        echo '<td><h1>Abasteça com álcool! </h1> <h2>Valor da diferença: R$' . $gas -$alc  .'</h2></td>';
     }
 }
 ?>
@@ -25,7 +25,7 @@ function abastecimento($gas, $alc)
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividade 1</title>
+    <title>Atividade 3</title>
 
     <style>
         input,

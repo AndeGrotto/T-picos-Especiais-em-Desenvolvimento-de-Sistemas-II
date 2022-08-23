@@ -3,22 +3,21 @@ require_once "header.php";
 if (!empty($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     $altura = $_POST['altura'];
     $sexo = $_POST['sexo'];
-    if ($sexo == "M") {
-        # code...
-    } else if ($sexo == "F") {
-        echo '<td><h1>Abasteça com gasolina! </h1> <h2>Valor da diferença: R$' . $alc - $gas  . '</h2></td>';
-    } else {
 
-    }
-    $imc = 
-
-    abastecimento($gasolina, $alcool);
+    calcIMC($altura, $sexo);
 }
 
-function abastecimento($gas, $alc)
+function calcIMC($a, $s)
 {
-    if ($gas < $alc) {
-        echo '<td><h1>Abasteça com gasolina! </h1> <h2>Valor da diferença: R$' . $alc - $gas  . '</h2></td>';
+
+    if ($s == "M") {
+        $imc = (72.7 * $a) - 58;
+        echo '<td><h2>Peso ideal do homem é: ' . $imc . '</h2></td>';
+    } else if ($s == "F") {
+        $imc = (62.1 * $a) - 44;
+        echo '<td><h2>Peso ideal da mulher é: ' . $imc . '</h2></td>';
+    } else {
+        echo '<td><h1>Sexo não encontrado</h1></td>';
     }
 }
 ?>
@@ -30,7 +29,7 @@ function abastecimento($gas, $alc)
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividade 1</title>
+    <title>Atividade 4</title>
 
     <style>
         input,
@@ -67,7 +66,7 @@ b) Para	mulheres:	(62.1	*	A)	– 44. -->
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="sexo" id="sexo" value="M" checked>
                 <label class="form-check-label" for="flexRadioDefault1">
-                Masculino
+                    Masculino
                 </label>
             </div>
             <div class="form-check">
